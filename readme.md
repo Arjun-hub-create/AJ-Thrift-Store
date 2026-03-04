@@ -37,4 +37,16 @@ Create a **real-world e-commerce store** that allows users to:
 ---
 
 ## 📁 Project Structure
+AJ-Thrift-Store
+│
+├── app/ # Next.js app router pages
+├── lib/ # Utility functions and helpers
+├── models/ # MongoDB models
+├── public/ # Static assets
+│
+├── middleware.js # Auth and route middleware
+├── next.config.js # Next.js configuration
+├── package.json # Project dependencies
+├── tailwind.config.js # TailwindCSS configuration
+└── README.md # Project documentation
 
