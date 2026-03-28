@@ -44,10 +44,10 @@ export default function LoginPage() {
     
     setIsLoading(true);
     
-    // Simulate API call
     setTimeout(() => {
       const result = login(formData.email, formData.password);
       if (result.success) {
+        alert('Login successful! Welcome back 👋');
         router.push('/');
       }
       setIsLoading(false);
@@ -59,7 +59,6 @@ export default function LoginPage() {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    // Clear error when user starts typing
     if (errors[e.target.name]) {
       setErrors({
         ...errors,
@@ -70,7 +69,6 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
-      {/* Animated Background Elements */}
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
@@ -144,7 +142,6 @@ export default function LoginPage() {
           className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-8 space-y-6 border border-green-100"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                 Email Address
@@ -176,7 +173,6 @@ export default function LoginPage() {
               )}
             </div>
 
-            {/* Password Field */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
                 Password
@@ -219,7 +215,6 @@ export default function LoginPage() {
               )}
             </div>
 
-            {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
@@ -240,7 +235,6 @@ export default function LoginPage() {
               </Link>
             </div>
 
-            {/* Submit Button */}
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -259,7 +253,6 @@ export default function LoginPage() {
             </motion.button>
           </form>
 
-          {/* Divider */}
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300"></div>
@@ -269,7 +262,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Sign Up Link */}
           <div className="text-center">
             <p className="text-sm text-gray-600">
               Don&apos;t have an account?{' '}

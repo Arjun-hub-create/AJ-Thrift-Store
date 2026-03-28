@@ -284,3 +284,6 @@ For issues or questions, refer to the documentation or create an issue.
 **Status**: Production Ready 🚀  
 **Version**: 1.0.0  
 **Last Updated**: November 8, 2025
+
+<!-- npm install
+npm run dev -->

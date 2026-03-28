@@ -59,10 +59,11 @@ export default function RegisterPage() {
     
     setIsLoading(true);
     
-    // Simulate API call
     setTimeout(() => {
       const result = register(formData.name, formData.email, formData.password);
+       console.log('Register result:', result);
       if (result.success) {
+        alert('Registration successful! Welcome to AJ\'s Thrift Store 🎉');
         router.push('/');
       }
       setIsLoading(false);
@@ -74,7 +75,6 @@ export default function RegisterPage() {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    // Clear error when user starts typing
     if (errors[e.target.name]) {
       setErrors({
         ...errors,
@@ -85,7 +85,6 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-green-50">
-      {/* Animated Background Elements */}
       <motion.div
         animate={{
           scale: [1, 1.3, 1],
@@ -159,7 +158,6 @@ export default function RegisterPage() {
           className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-8 space-y-6 border border-emerald-100"
         >
           <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Name Field */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                 Full Name
@@ -191,7 +189,6 @@ export default function RegisterPage() {
               )}
             </div>
 
-            {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                 Email Address
@@ -223,7 +220,6 @@ export default function RegisterPage() {
               )}
             </div>
 
-            {/* Password Field */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
                 Password
@@ -266,7 +262,6 @@ export default function RegisterPage() {
               )}
             </div>
 
-            {/* Confirm Password Field */}
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
                 Confirm Password
@@ -309,7 +304,6 @@ export default function RegisterPage() {
               )}
             </div>
 
-            {/* Submit Button */}
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -328,7 +322,6 @@ export default function RegisterPage() {
             </motion.button>
           </form>
 
-          {/* Divider */}
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300"></div>
@@ -338,7 +331,6 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          {/* Sign In Link */}
           <div className="text-center">
             <p className="text-sm text-gray-600">
               Already have an account?{' '}
